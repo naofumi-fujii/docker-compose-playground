@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "9090:9090"
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - .:/code
+  redis:
+    image: "redis:alpine"
