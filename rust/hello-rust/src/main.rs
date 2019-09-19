@@ -12,7 +12,7 @@ use hyper::{Body, Request, Response, Server};
 
 fn main() {
     pretty_env_logger::init();
-    let addr = ([127, 0, 0, 1], 9090).into();
+    let addr = ([0, 0, 0, 0], 9090).into();
 
     let server = Server::bind(&addr)
         .serve(|| {
