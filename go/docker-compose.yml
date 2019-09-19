@@ -8,5 +8,3 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - .:/code
-  redis:
-    image: "redis:alpine"
