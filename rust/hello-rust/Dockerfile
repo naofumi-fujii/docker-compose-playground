@@ -1,4 +1,6 @@
 FROM rust:latest
 WORKDIR /code
 COPY . .
-CMD ["cargo", "run", "src/main.rs"]
+CMD ["cargo", "build"]
+COPY . .
+CMD ["cargo", "run"]
