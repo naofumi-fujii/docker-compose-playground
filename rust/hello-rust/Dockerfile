@@ -1,6 +1,7 @@
 FROM rust:latest
 WORKDIR /code
 COPY . .
-CMD ["cargo", "build"]
+RUN cargo build --release
 COPY . .
+RUN cargo build
 CMD ["cargo", "run"]
