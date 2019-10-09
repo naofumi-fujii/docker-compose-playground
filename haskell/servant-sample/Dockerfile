@@ -1,4 +1,4 @@
-FROM haskell:8.2.2
+FROM haskell:8.6.5
 
 RUN mkdir -p /app/user
 WORKDIR /app/user
