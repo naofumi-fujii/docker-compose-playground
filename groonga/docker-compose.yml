@@ -1,0 +1,9 @@
+version: '3'
+services:
+  groonga:
+    image: groonga/groonga
+    volumes:
+      - ./groonga:/mnt/db
+    ports:
+      - "10041:10041"
+    command: ["-n", "/mnt/db/data.db"]
