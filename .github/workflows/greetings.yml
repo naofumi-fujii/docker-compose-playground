@@ -1,0 +1,22 @@
+name: Greetings
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: 1
+          body: |
+            This is a multi-line test comment
+            - With GitHub **Markdown**
+            - Created by [create-or-update-comment][1]
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reaction-type: '+1'
