@@ -8,9 +8,13 @@ import Network.HTTP.Types (status200)
 import Network.Wai (Application, responseBuilder)
 import Network.Wai.Handler.Warp (run)
 import Network.Wai.Logger (withStdoutLogger, ApacheLogger)
+import System.Environment
 
 main :: IO ()
-main = withStdoutLogger $ \aplogger ->
+main = do
+  buff <- getEnv "LANG"
+  putStrLn buff
+  withStdoutLogger $ \aplogger ->
     run 3000 $ logApp aplogger
 
 logApp :: ApacheLogger -> Application
