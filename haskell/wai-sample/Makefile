@@ -5,4 +5,4 @@ run:
 docker-build:
 	# docker pull matsubara0507/stack-build:lts-14.17 && stack --docker build -j 1 Cabal
 	stack --local-bin-path=./bin --docker install
-	docker build -t naofumi-fujii/hogehgoe . --build-arg local_bin_path=./bin
+	docker build -t naofumi-fujii/wai-sample . --build-arg local_bin_path=./bin
