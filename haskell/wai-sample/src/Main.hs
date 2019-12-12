@@ -10,6 +10,7 @@ import Network.Wai.Handler.Warp (run)
 import Network.Wai.Logger (withStdoutLogger, ApacheLogger)
 import System.Environment
 
+-- http://hackage.haskell.org/package/wai-logger-2.3.6/docs/Network-Wai-Logger.html
 main :: IO ()
 main = do
   envPort <- getEnv "PORT"
