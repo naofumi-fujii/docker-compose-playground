@@ -14,8 +14,11 @@ main :: IO ()
 main = do
   buff <- getEnv "LANG"
   putStrLn buff
+  envPort <- getEnv "PORT"
+  putStrLn envPort
+  let port = read envPort :: Int
   withStdoutLogger $ \aplogger ->
-    run 3000 $ logApp aplogger
+    run port $ logApp aplogger
 
 logApp :: ApacheLogger -> Application
 logApp aplogger req response = do
