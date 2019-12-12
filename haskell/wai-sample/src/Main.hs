@@ -2,10 +2,11 @@
 module Main where
 
 import Data.ByteString.Builder (byteString)
+import Data.ByteString.Char8(unpack)
 import Control.Monad.IO.Class (liftIO)
 import qualified Data.ByteString.Char8 as BS
 import Network.HTTP.Types (status200)
-import Network.Wai (Application, responseBuilder)
+import Network.Wai (Application, responseBuilder, getRequestBodyChunk)
 import Network.Wai.Handler.Warp (run)
 import Network.Wai.Logger (withStdoutLogger, ApacheLogger)
 import System.Environment
@@ -21,6 +22,8 @@ main = do
 
 logApp :: ApacheLogger -> Application
 logApp aplogger req response = do
+    rbc <- getRequestBodyChunk(req)
+    putStrLn(unpack(rbc))
     liftIO $ aplogger req status (Just len)
     response $ responseBuilder status hdr msg
   where
