@@ -1,4 +1,4 @@
 build:
 	stack build
 run:
-	stack exec wai-sample
+	PORT=1234 stack exec wai-sample
