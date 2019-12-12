@@ -13,7 +13,7 @@ import System.Environment
 main :: IO ()
 main = do
   envPort <- getEnv "PORT"
-  putStrLn envPort
+  putStrLn $ "PORT=" ++ show (envPort)
   let port = read envPort :: Int
   withStdoutLogger $ \aplogger ->
     run port $ logApp aplogger
