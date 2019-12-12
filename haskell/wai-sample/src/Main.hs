@@ -12,8 +12,6 @@ import System.Environment
 
 main :: IO ()
 main = do
-  buff <- getEnv "LANG"
-  putStrLn buff
   envPort <- getEnv "PORT"
   putStrLn envPort
   let port = read envPort :: Int
